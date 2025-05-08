@@ -79,9 +79,9 @@ async function main() {
     await mongoose.connect(dbUrl);
 }
 
-// app.get("/" ,(req,res)=>{
-//     res.send("HI!!");
-// })
+app.get("/" ,(req,res)=>{
+    res.redirect("/listings");
+})
 
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success");
