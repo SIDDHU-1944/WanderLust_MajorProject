@@ -2,7 +2,13 @@ const fetch =require("node-fetch");
 
 module.exports.getCoordinates = async (location)=>{
     try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1`);
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1`,{
+        headers: {
+          "User-Agent": "wanderlust-app/1.0 https://github.com/SIDDHU-1944/WanderLust_MajorProject", 
+          Accept: "application/json",
+        },
+        timeout: 10000,
+      });
         const data = await res.json();
 
         if (!data.length) {
