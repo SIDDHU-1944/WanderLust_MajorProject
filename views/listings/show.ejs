@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 <script>
-    window.coords = <%- JSON.stringify(listing.geometry.coordinates) %>; // [longitude, latitude]
+    window.coords = "<%- JSON.stringify(listing.geometry.coordinates) %>"; // [longitude, latitude]
     window.title = "<%= listing.title %>";
 </script>
     <div class="row">
